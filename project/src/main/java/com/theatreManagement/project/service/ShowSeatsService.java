@@ -20,6 +20,9 @@ public class ShowSeatsService {
 	public ShowSeats getShowSeatsByDate(Date date) {
 		return seatsRepo.findById(date).orElse(null);
 	}
+	public void save(ShowSeats showSeats) {
+		 seatsRepo.save(showSeats);
+	}
 	
 	
 	

@@ -77,7 +77,7 @@ public class MovieService {
 			
 		}
 		else {
-			throw new Exception("Movie not played on this "+date+" date");
+			seatsService.save(new ShowSeats(date,100,100,100,100));
 		}
 		return true;
 		

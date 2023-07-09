@@ -67,7 +67,7 @@ public class ReservationController {
 			 Movie m=movie.getMovieDetaisByMovieName(movieName);
 			 Reservation book = reservation.bookTicket(m.getId(),NoOfSeats,date,movieTime);
 			 show.saveWithShow(showslotseats,movieTime,NoOfSeats);
-			 return "\nMovie :"+movieName+movieTime+book;
+			 return "Movie :"+m.getName()+book;
 		}
 		catch(Exception e) {
 			return e.getMessage();
@@ -84,7 +84,7 @@ public class ReservationController {
 			return "TicketID not found";
 		}
 		Movie m=movie.findByMovieId(ticketData.getMovieId());
-		return "\nMovie :"+m.getName()+ticketData;
+		return "Movie :"+m.getName()+ticketData;
 	}
 	@DeleteMapping("/CancelTicket")
 	public String cancelTicket(
